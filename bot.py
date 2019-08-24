@@ -3,8 +3,6 @@ import os
 import asyncio
 from discord.ext import commands
 
-BOT_PREFIX = os.environ['>']
-
 client = commands.Bot(command_prefix = '>')
 client.remove_command('help')
 
@@ -39,4 +37,4 @@ async def request(ctx, *, remind):
     await client.send_message(channel, embed=embed)
 
 
-client.run(str(os.environ.get('BOT_TOKEN')))
+client.run(os.environ["TOKEN"])
